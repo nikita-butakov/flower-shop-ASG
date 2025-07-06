@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bloom & Blossom</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    /* (тот же CSS что у тебя — без изменений) */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Open Sans', sans-serif;
+      line-height: 1.6;
+      background-color: #fff8f0;
+      color: #333;
+    }
+    header {
+      background: #ffb6b9;
+      padding: 20px 40px;
+      text-align: center;
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      color: #fff;
+    }
+    nav {
+      background-color: #ffe0e4;
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+    }
+    nav a {
+      color: #333;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: bold;
+    }
+    .hero {
+      background-image: url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1350&q=80');
+      background-size: cover;
+      background-position: center;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+    .hero h2 {
+      background-color: rgba(255, 182, 185, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+      font-size: 2.5rem;
+    }
+    .section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .section h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .product {
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .product img {
+      max-width: 100%;
+      border-radius: 8px;
+      height: 180px;
+      object-fit: cover;
+    }
+    .product h4 {
+      margin: 10px 0;
+      font-size: 1.2rem;
+    }
+    form {
+      max-width: 400px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    form label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    form input, form select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    form button {
+      padding: 10px 20px;
+      background-color: #ff6f91;
+      border: none;
+      color: white;
+      cursor: pointer;
+      font-size: 1rem;
+      border-radius: 5px;
+    }
+    footer {
+      background-color: #ffb6b9;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Bloom & Blossom</h1>
+  </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Shop</a>
+    <a href="#">About Us</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <div class="hero">
+    <h2>Fresh Flowers for Every Occasion</h2>
+  </div>
+
+  <section class="section">
+    <h3>Our Best Sellers</h3>
+    <div class="products">
+      <div class="product">
+        <img src="https://images.pexels.com/photos/5812975/pexels-photo-5812975.jpeg?auto=format&fit=crop&w=600&q=80" alt="Rose bouquet">
+        <h4>Romantic Roses</h4>
+        <p>$29.99</p>
+      </div>
+      <div class="product">
+        <img src="https://images.pexels.com/photos/32746009/pexels-photo-32746009.jpeg?auto=format&fit=crop&w=600&q=80" alt="Tulip bouquet">
+        <h4>Spring Tulips</h4>
+        <p>$24.99</p>
+      </div>
+      <div class="product">
+        <img src="https://images.pexels.com/photos/16180601/pexels-photo-16180601.jpeg?auto=format&fit=crop&w=600&q=80" alt="Mixed bouquet">
+        <h4>Blossom Mix</h4>
+        <p>$34.99</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h3>Place Your Order</h3>
+    <form id="orderForm">
+      <label>
+        Name:
+        <input type="text" name="name" required />
+      </label>
+      <label>
+        Address:
+        <input type="text" name="address" required />
+      </label>
+      <label>
+        Flower:
+        <select name="flower" required>
+          <option value="romantic_roses">Romantic Roses</option>
+          <option value="spring_tulips">Spring Tulips</option>
+          <option value="blossom_mix">Blossom Mix</option>
+        </select>
+      </label>
+      <button type="submit">Order Now</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Bloom & Blossom. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const form = document.getElementById('orderForm');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+
+      try {
+        const response = await fetch('/order', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+
+        if (response.ok) {
+          alert('Thank you! Your order has been received.');
+          form.reset();
+        } else {
+          alert('Sorry, there was a problem processing your order.');
+        }
+      } catch (error) {
+        alert('Network error. Please try again later.');
+      }
+    });
+  </script>
+
+</body>
+</html>
