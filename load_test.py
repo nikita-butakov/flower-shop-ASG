@@ -33,8 +33,8 @@ def make_order():
         print(f"Request error: {e}")
 
 if __name__ == "__main__":
-    orders_to_send = 3000  # количество заказов
-    delay = 8  # пауза между запросами в секундах
+    orders_to_send = 3000  # total number of orders to simulate
+    delay = 8  # delay between each request in seconds
 
     for _ in range(orders_to_send):
         make_order()
